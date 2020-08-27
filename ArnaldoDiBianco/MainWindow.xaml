@@ -1,0 +1,167 @@
+﻿<Window x:Class="ArnaldoDiBianco.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ArnaldoDiBianco"
+				xmlns:vm="clr-namespace:ArnaldoDiBianco.ViewModels"
+				xmlns:uc="clr-namespace:ArnaldoDiBianco.UserControls"
+				xmlns:design="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="I pelli di Don Bruno" Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+
+	<Window.DataContext>
+		<vm:MainWindowViewModel/>
+	</Window.DataContext>
+
+
+	<design:Transitioner SelectedIndex="0" x:Name="transitioner" Focusable="False" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+		<design:TransitionerSlide Focusable="False" Background="#E000">
+			<design:TransitionerSlide.OpeningEffects>
+				<design:TransitionEffect Kind="FadeIn" Duration="0:0:3" />
+			</design:TransitionerSlide.OpeningEffects>
+			<design:TransitionerSlide.ForwardWipe>
+				<design:FadeWipe />
+			</design:TransitionerSlide.ForwardWipe>
+			<TextBlock Style="{StaticResource MaterialDesignSubtitle1TextBlock}" Margin="50"
+								 HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#7FFF"
+								 Text="I pelli di Don Bruno" FontWeight="Bold" FontSize="60"/>
+		</design:TransitionerSlide>
+
+		<design:TransitionerSlide>
+			<design:TransitionerSlide.OpeningEffects>
+				<design:TransitionEffect Kind="ExpandIn" Duration="0:0:2" OffsetTime="0:0:0.5" />
+				<design:TransitionEffect Kind="FadeIn" Duration="0:0:2" OffsetTime="0:0:0.5" />
+			</design:TransitionerSlide.OpeningEffects>
+			<Grid x:Name="mainContainer">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="Auto"/>
+				</Grid.RowDefinitions>
+
+				<design:Card HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="5" Padding="10">
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*"/>
+							<ColumnDefinition Width="Auto" MinWidth="200"/>
+							<ColumnDefinition Width="10"/>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition Width="Auto"/>
+						</Grid.ColumnDefinitions>
+						<ComboBox Grid.Column="1" x:Name="cbListItemTypes" HorizontalAlignment="Stretch"
+										HorizontalContentAlignment="Left"
+										design:HintAssist.Hint="Tipo di finestra o porta da aggiungere:" design:HintAssist.FloatingScale="1" design:HintAssist.IsFloating="True"
+										design:HintAssist.Foreground="{StaticResource MaterialDesignFloatingHintTextBox.HintAssistFG}"/>
+						<Button Grid.Column="3" Style="{DynamicResource MaterialDesignRaisedAccentButton}" design:ButtonAssist.CornerRadius="50" Width="25" Height="25" Margin="2" Padding="0"
+							HorizontalAlignment="Center" VerticalAlignment="Center"	x:Name="btnAdd" Click="btnAdd_Click">
+							<design:PackIcon Kind="Plus">
+								<!--<design:PackIcon.LayoutTransform>
+							<ScaleTransform ScaleX="2" ScaleY="2"/>
+						</design:PackIcon.LayoutTransform>-->
+							</design:PackIcon>
+						</Button>
+						<Button Grid.Column="4" Style="{DynamicResource MaterialDesignRaisedAccentButton}" design:ButtonAssist.CornerRadius="50" Width="25" Height="25" Margin="2" Padding="0"
+							HorizontalAlignment="Center" VerticalAlignment="Center"	x:Name="btnClear" Click="btnClear_Click" Background="#18FF0000" Foreground="Red">
+							<design:PackIcon Kind="Clear">
+								<!--<design:PackIcon.LayoutTransform>
+							<ScaleTransform ScaleX="2" ScaleY="2"/>
+						</design:PackIcon.LayoutTransform>-->
+							</design:PackIcon>
+						</Button>
+					</Grid>
+				</design:Card>
+
+				<ListView Grid.Row="1" HorizontalContentAlignment="Stretch" x:Name="itemsList">
+				</ListView>
+
+				<design:Card Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Margin="0,5,0,0" Padding="0" design:Background="{Binding BackgroundColor, Mode=OneWay}">
+					<Expander HorizontalAlignment="Stretch" IsExpanded="False" x:Name="_total">
+						<Expander.Header>
+							<Grid>
+								<TextBlock Style="{StaticResource MaterialDesignSubtitle1TextBlock}" x:Name="_noContent" Margin="35,6,0,0"
+											 HorizontalAlignment="Left" Text="Totale" FontWeight="Bold"/>
+								<Button Style="{DynamicResource MaterialDesignRaisedAccentButton}" design:ButtonAssist.CornerRadius="50" Width="25" Height="25" Padding="0" Margin="2"
+							HorizontalAlignment="Left" VerticalAlignment="Center"	x:Name="btnCalcAll" Click="btnCalcAll_Click">
+									<design:PackIcon Kind="Play" Margin="-1,-1,0,0">
+										<design:PackIcon.LayoutTransform>
+											<ScaleTransform ScaleX="1" ScaleY="1"/>
+										</design:PackIcon.LayoutTransform>
+									</design:PackIcon>
+								</Button>
+							</Grid>
+						</Expander.Header>
+						<Grid Margin="15,0,15,15">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="Auto"/>
+								<ColumnDefinition Width="10"/>
+								<ColumnDefinition Width="*"/>
+								<ColumnDefinition Width="15"/>
+								<ColumnDefinition Width="Auto"/>
+								<ColumnDefinition Width="10"/>
+								<ColumnDefinition Width="*"/>
+							</Grid.ColumnDefinitions>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="Auto"/>
+								<RowDefinition Height="5"/>
+								<RowDefinition Height="Auto"/>
+								<RowDefinition Height="5"/>
+								<RowDefinition Height="Auto"/>
+								<RowDefinition Height="5"/>
+								<RowDefinition Height="Auto"/>
+								<RowDefinition Height="5"/>
+								<RowDefinition Height="Auto"/>
+								<RowDefinition Height="5"/>
+								<RowDefinition Height="Auto"/>
+							</Grid.RowDefinitions>
+							<TextBlock Grid.Row="0" Grid.Column="0" Style="{DynamicResource MaterialDesignSubtitle1TextBlock}"
+								 HorizontalAlignment="Left" VerticalAlignment="Center" Text="Telaio Bombato:"/>
+							<TextBlock Grid.Row="0" Grid.Column="2" Style="{DynamicResource MaterialDesignSubtitle1TextBlock}"
+								 VerticalAlignment="Center" FontWeight="Black" Text="{Binding TelaioBombato}"/>
+							<TextBlock Grid.Row="2" Grid.Column="0" Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
+								 HorizontalAlignment="Left" VerticalAlignment="Center" Text="Telaio Dritto:"/>
+							<TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
+								 VerticalAlignment="Center" FontWeight="Black" Text="{Binding TelaioDritto}"/>
+							<TextBlock Grid.Row="4" Grid.Column="0" Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
+								 HorizontalAlignment="Left" VerticalAlignment="Center" Text="Sottotelaio:"/>
+							<TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
+								 VerticalAlignment="Center" FontWeight="Black" Text="{Binding Sottotelaio}"/>
+							<TextBlock Grid.Row="6" Grid.Column="0" Style="{DynamicResource MaterialDesignSubtitle1TextBlock}"
+								 HorizontalAlignment="Left" VerticalAlignment="Center" Text="Anta:"/>
+							<TextBlock Grid.Row="6" Grid.Column="2" Style="{DynamicResource MaterialDesignSubtitle1TextBlock}"
+								 VerticalAlignment="Center" FontWeight="Black" Text="{Binding Anta}"/>
+							<TextBlock Grid.Row="8" Grid.Column="0" Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
+								 HorizontalAlignment="Left" VerticalAlignment="Center" Text="T di riporto:"/>
+							<TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
+								 VerticalAlignment="Center" FontWeight="Black" Text="{Binding TdiRiporto}"/>
+							<TextBlock Grid.Row="10" Grid.Column="0" Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
+								 HorizontalAlignment="Left" VerticalAlignment="Center" Text="40 x 20:"/>
+							<TextBlock Grid.Row="10" Grid.Column="2" Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
+								 VerticalAlignment="Center" FontWeight="Black" Text="{Binding _40X20}"/>
+							<TextBlock Grid.Row="0" Grid.Column="4" Style="{DynamicResource MaterialDesignSubtitle1TextBlock}"
+								 HorizontalAlignment="Left" VerticalAlignment="Center" Text="Fascione:"/>
+							<TextBlock Grid.Row="0" Grid.Column="6" Style="{DynamicResource MaterialDesignSubtitle1TextBlock}"
+								 VerticalAlignment="Center" FontWeight="Black" Text="{Binding Fascione}"/>
+							<TextBlock Grid.Row="2" Grid.Column="4" Style="{DynamicResource MaterialDesignSubtitle1TextBlock}"
+								 HorizontalAlignment="Left" VerticalAlignment="Center" Text="Zoccolo:"/>
+							<TextBlock Grid.Row="2" Grid.Column="6" Style="{DynamicResource MaterialDesignSubtitle1TextBlock}"
+								 VerticalAlignment="Center" FontWeight="Black" Text="{Binding Zoccolo}"/>
+							<TextBlock Grid.Row="4" Grid.Column="4" Style="{DynamicResource MaterialDesignSubtitle1TextBlock}"
+								 HorizontalAlignment="Left" VerticalAlignment="Center" Text="Compensatore:"/>
+							<TextBlock Grid.Row="4" Grid.Column="6" Style="{DynamicResource MaterialDesignSubtitle1TextBlock}"
+								 VerticalAlignment="Center" FontWeight="Black" Text="{Binding Compensatore}"/>
+							<TextBlock Grid.Row="6" Grid.Column="4" Style="{DynamicResource MaterialDesignSubtitle1TextBlock}"
+								 HorizontalAlignment="Left" VerticalAlignment="Center" Text="Mezza Lamella:"/>
+							<TextBlock Grid.Row="6" Grid.Column="6" Style="{DynamicResource MaterialDesignSubtitle1TextBlock}"
+								 VerticalAlignment="Center" FontWeight="Black" Text="{Binding MezzaLamella}"/>
+							<TextBlock Grid.Row="8" Grid.Column="4" Style="{DynamicResource MaterialDesignSubtitle1TextBlock}"
+								 HorizontalAlignment="Left" VerticalAlignment="Center" Text="Lamella:"/>
+							<TextBlock Grid.Row="8" Grid.Column="6" Style="{DynamicResource MaterialDesignSubtitle1TextBlock}"
+								 VerticalAlignment="Center" FontWeight="Black" Text="{Binding Lamella}"/>
+						</Grid>
+					</Expander>
+				</design:Card>
+			</Grid>
+		</design:TransitionerSlide>
+	</design:Transitioner>
+</Window>

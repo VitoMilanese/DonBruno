@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AssemblyVersion>1.0.30.0</AssemblyVersion>
+    <FileVersion>1.0.30.0</FileVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\FinestraPersiana1anta.png" />
+    <None Remove="Images\FinestraPersiana2ante.png" />
+    <None Remove="Images\PortaBalconePersiana1anta.png" />
+    <None Remove="Images\PortaBalconePersiana2ante.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignColors" Version="1.2.7-ci1883" />
+    <PackageReference Include="MaterialDesignThemes" Version="3.2.0-ci1883" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\FinestraPersiana1anta.png" />
+    <Resource Include="Images\FinestraPersiana2ante.png" />
+  </ItemGroup>
+
+</Project>
