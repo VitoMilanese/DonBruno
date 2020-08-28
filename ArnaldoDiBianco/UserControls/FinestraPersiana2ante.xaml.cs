@@ -36,15 +36,19 @@ namespace ArnaldoDiBianco.UserControls
 			{
 				var telaio = larghezza + altezza * 2;
 				var anta = Math.Max(0, (larghezza - 10) * 2 + (altezza - 6) * 4);
+				var portalamelle2coppie = Math.Max(0, altezza - 20);
 				var model = new FinestraPersiana2anteViewModel
 				{
 					NumeroLamelle = _vm.NumeroLamelle,
 					Telaio = telaio,
 					Anta = anta,
 					Compensatore = Math.Max(0, (larghezza - 38) * 2),
-					Portalamelle2coppie = Math.Max(0, altezza - 20),
+					Portalamelle2coppie = portalamelle2coppie,
 					MezzaLamella = Math.Max(0, (larghezza - 42) * 2),
-					Lamella = larghezza <= 0 ? 0 : (larghezza - 40) * _vm.NumeroLamelle,
+					Lamella = Math.Round(
+						larghezza <= 0 ? 0 :
+						(larghezza - 40) * Math.Floor(portalamelle2coppie / 6)
+						, 0),
 					_40X20 = Math.Max(0, larghezza - 11),
 					TdiRiporto = Math.Max(0, altezza - 12),
 					Squadrette = 12,
@@ -54,9 +58,9 @@ namespace ArnaldoDiBianco.UserControls
 					CoppiaTappiTdiR = 1,
 					Guarnizione = telaio + anta,
 					Asta = larghezza <= 0 ? 0 : altezza - 28,
-					IncontroAsta = 0, // TODO: 0 or 1?
+					IncontroAsta = larghezza <= 0 ? 0 : 2,
 					CremonesePersiana = larghezza <= 0 ? 0 : 1,
-					Puntali = altezza <= 0 ? 0 : 2, // TODO: maybe B2?
+					Puntali = altezza <= 0 ? 0 : 2,
 					Regolatori = larghezza <= 0 ? 0 : 4
 				};
 				_vm.NumeroLamelle = model.NumeroLamelle;

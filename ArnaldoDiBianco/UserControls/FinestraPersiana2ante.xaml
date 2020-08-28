@@ -70,13 +70,15 @@
 				<Run Text="{Binding Compensatore}" Foreground="#F5A5"/>
 				<Run Text=")" Foreground="#F5A5"/>
 			</TextBlock>
-			<TextBlock Grid.Row="6" Grid.Column="0" Style="{DynamicResource MaterialDesignSubtitle1TextBlock}"
-								 HorizontalAlignment="Left" VerticalAlignment="Center" Text="Portalamelle 2 coppie:"/>
-			<TextBlock Grid.Row="6" Grid.Column="2" Style="{DynamicResource MaterialDesignSubtitle1TextBlock}"
+			<TextBlock Grid.Row="6" Grid.Column="0" Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
+								 HorizontalAlignment="Left" VerticalAlignment="Center" Text="Portalamelle:"/>
+			<TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
 								 VerticalAlignment="Center" FontWeight="Black">
-				<Run Text="{Binding Portalamelle2coppieX, Mode=OneWay}"/>
-				<Run Text="  (" Foreground="#F5A5"/>
-				<Run Text="{Binding Portalamelle2coppie}" Foreground="#F5A5"/>
+				<Run Text="{Binding Quantita2, Mode=OneWay}"/>
+				<Run Text=" x " Foreground="#F5A5"/>
+				<Run Text="{Binding Portalamelle2coppie6, Mode=OneWay}" Foreground="#F5A5"/>
+				<Run Text=" (" Foreground="#F5A5"/>
+				<Run Text="{Binding Portalamelle2coppie, Mode=OneWay}" Foreground="#F5A5"/>
 				<Run Text=")" Foreground="#F5A5"/>
 			</TextBlock>
 			<TextBlock Grid.Row="8" Grid.Column="0" Style="{StaticResource MaterialDesignSubtitle1TextBlock}"

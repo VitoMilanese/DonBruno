@@ -1,4 +1,6 @@
-﻿namespace ArnaldoDiBianco.ViewModels
+﻿using System;
+
+namespace ArnaldoDiBianco.ViewModels
 {
 	public abstract class ListItemViewModel : BaseViewModel
 	{
@@ -44,6 +46,7 @@
 				UpdateQuantity();
 			}
 		}
+		public int Quantita2 => Quantita * 2;
 
 		public decimal Telaio
 		{
@@ -100,6 +103,8 @@
 			}
 		}
 		public decimal Portalamelle1coppiaX => Portalamelle1coppia * Quantita;
+		public decimal Portalamelle1coppia6 => Math.Round(Portalamelle1coppia / 6, 0);
+		public decimal Portalamelle1coppiaX6 => Math.Round(Portalamelle1coppiaX / 6, 0);
 
 		public decimal Portalamelle2coppie
 		{
@@ -114,6 +119,8 @@
 			}
 		}
 		public decimal Portalamelle2coppieX => Portalamelle2coppie * Quantita;
+		public decimal Portalamelle2coppie6 => Math.Round(Portalamelle2coppie / 6, 0);
+		public decimal Portalamelle2coppieX6 => Math.Round(Portalamelle2coppieX / 6, 0);
 
 		public decimal MezzaLamella
 		{
@@ -434,7 +441,12 @@
 			RaisePropertyChanged("TelaioX");
 			RaisePropertyChanged("AntaX");
 			RaisePropertyChanged("CompensatoreX");
+			RaisePropertyChanged("Portalamelle1coppiaX");
+			RaisePropertyChanged("Portalamelle1coppia6");
+			RaisePropertyChanged("Portalamelle1coppiaX6");
 			RaisePropertyChanged("Portalamelle2coppieX");
+			RaisePropertyChanged("Portalamelle2coppie6");
+			RaisePropertyChanged("Portalamelle2coppieX6");
 			RaisePropertyChanged("MezzaLamellaX");
 			RaisePropertyChanged("LamellaX");
 			RaisePropertyChanged("_40X20X");
@@ -450,6 +462,7 @@
 			RaisePropertyChanged("CatenacciX");
 			RaisePropertyChanged("CoppiaTappiTdiRX");
 			RaisePropertyChanged("RegolatoriX");
+			RaisePropertyChanged("Quantita2");
 		}
 	}
 }

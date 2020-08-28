@@ -75,8 +75,8 @@
 				<ListView Grid.Row="1" HorizontalContentAlignment="Stretch" x:Name="itemsList">
 				</ListView>
 
-				<design:Card Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Margin="0,5,0,0" Padding="0" design:Background="{Binding BackgroundColor, Mode=OneWay}">
-					<Expander HorizontalAlignment="Stretch" IsExpanded="False" x:Name="_total">
+				<design:Card Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Margin="0,5,0,0" Padding="0" design:Background="DarkGray">
+					<Expander HorizontalAlignment="Stretch" IsExpanded="False" x:Name="_total" Margin="1,1,1,0">
 						<Expander.Header>
 							<Grid>
 								<TextBlock Style="{StaticResource MaterialDesignSubtitle1TextBlock}" x:Name="_noContent" Margin="35,6,0,0"
