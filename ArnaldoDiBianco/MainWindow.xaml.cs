@@ -56,6 +56,9 @@ namespace ArnaldoDiBianco
 				case (int)Enums.ListItemTypes.Finestra1anta:
 					item = new ListItemContainer(Enums.ListItemTypes.Finestra1anta);
 					break;
+				case (int)Enums.ListItemTypes.Finestra2ante:
+					item = new ListItemContainer(Enums.ListItemTypes.Finestra2ante);
+					break;
 			}
 			item.RemoveClicked = btnRemove_Click;
 			itemsList.Items.Add(item);

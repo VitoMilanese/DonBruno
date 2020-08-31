@@ -23,6 +23,7 @@ namespace ArnaldoDiBianco.ViewModels
 		private decimal _rolli;
 		private int _catenacci;
 		private int _coppiaTappiTdiR;
+		private int _coppiaTappiT;
 		private decimal _guarnizione;
 		private decimal _asta;
 		private int _incontroAsta;
@@ -293,6 +294,20 @@ namespace ArnaldoDiBianco.ViewModels
 		}
 		public int CoppiaTappiTdiRX => CoppiaTappiTdiR * Quantita;
 
+		public int CoppiaTappiT
+		{
+			get => _coppiaTappiT;
+			set
+			{
+				if (value != _coppiaTappiT)
+				{
+					_coppiaTappiT = value;
+					RaisePropertyChanged();
+				}
+			}
+		}
+		public int CoppiaTappiTX => CoppiaTappiT * Quantita;
+
 		public decimal Guarnizione
 		{
 			get => _guarnizione;
@@ -504,6 +519,7 @@ namespace ArnaldoDiBianco.ViewModels
 			RaisePropertyChanged("RolliX");
 			RaisePropertyChanged("CatenacciX");
 			RaisePropertyChanged("CoppiaTappiTdiRX");
+			RaisePropertyChanged("CoppiaTappiTX");
 			RaisePropertyChanged("GuarnizioneX");
 			RaisePropertyChanged("AstaX");
 			RaisePropertyChanged("IncontroAstaX");

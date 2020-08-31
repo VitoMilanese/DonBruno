@@ -42,7 +42,8 @@ namespace ArnaldoDiBianco.UserControls
 				case Enums.ListItemTypes.Finestra1anta:
 					_content.Content = new Finestra1anta();
 					break;
-				case Enums.ListItemTypes.Finestra2anta:
+				case Enums.ListItemTypes.Finestra2ante:
+					_content.Content = new Finestra2ante();
 					break;
 				case Enums.ListItemTypes.PortaBalconePersiana1anta:
 					break;

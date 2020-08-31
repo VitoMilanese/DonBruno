@@ -1,0 +1,179 @@
+﻿<UserControl x:Class="ArnaldoDiBianco.UserControls.Finestra2ante"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ArnaldoDiBianco.UserControls"
+             xmlns:vm="clr-namespace:ArnaldoDiBianco.ViewModels"
+						 xmlns:design="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="550">
+
+	<UserControl.DataContext>
+		<vm:Finestra2anteViewModel/>
+	</UserControl.DataContext>
+
+	<design:Card HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="5" Padding="10" design:Background="{DynamicResource MaterialDesignBackground}">
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="10"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="15"/>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="10"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="15"/>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="10"/>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="5"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="5"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="5"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="5"/>
+				<RowDefinition Height="Auto"/>
+			</Grid.RowDefinitions>
+			<TextBlock Grid.Row="0" Grid.Column="0" Style="{DynamicResource MaterialDesignSubtitle1TextBlock}"
+								 HorizontalAlignment="Left" VerticalAlignment="Center" Text="Telaio:"/>
+			<TextBlock Grid.Row="0" Grid.Column="2" Style="{DynamicResource MaterialDesignSubtitle1TextBlock}"
+								 VerticalAlignment="Center" FontWeight="Black">
+				<Run Text="{Binding TelaioX, Mode=OneWay}"/>
+				<!--<Run Text="  (" Foreground="#F5A5"/>
+				<Run Text="{Binding Telaio}" Foreground="#F5A5"/>
+				<Run Text=")" Foreground="#F5A5"/>-->
+			</TextBlock>
+			<TextBlock Grid.Row="2" Grid.Column="0" Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
+								 HorizontalAlignment="Left" VerticalAlignment="Center" Text="Anta:"/>
+			<TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
+								 VerticalAlignment="Center" FontWeight="Black">
+				<Run Text="{Binding AntaX, Mode=OneWay}"/>
+				<!--<Run Text="  (" Foreground="#F5A5"/>
+				<Run Text="{Binding Anta}" Foreground="#F5A5"/>
+				<Run Text=")" Foreground="#F5A5"/>-->
+			</TextBlock>
+			<TextBlock Grid.Row="4" Grid.Column="0" Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
+								 HorizontalAlignment="Left" VerticalAlignment="Center" Text="Sottotelaio:"/>
+			<TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
+								 VerticalAlignment="Center" FontWeight="Black">
+				<Run Text="{Binding SottotelaioX, Mode=OneWay}"/>
+				<!--<Run Text="  (" Foreground="#F5A5"/>
+				<Run Text="{Binding Sottotelaio}" Foreground="#F5A5"/>
+				<Run Text=")" Foreground="#F5A5"/>-->
+			</TextBlock>
+			<TextBlock Grid.Row="6" Grid.Column="0" Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
+								 HorizontalAlignment="Left" VerticalAlignment="Center" Text="T di riporto:"/>
+			<TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
+								 VerticalAlignment="Center" FontWeight="Black">
+				<Run Text="{Binding TdiRiportoX, Mode=OneWay}"/>
+				<!--<Run Text="  (" Foreground="#F5A5"/>
+				<Run Text="{Binding TdiRiporto}" Foreground="#F5A5"/>
+				<Run Text=")" Foreground="#F5A5"/>-->
+			</TextBlock>
+			<TextBlock Grid.Row="8" Grid.Column="0" Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
+								 HorizontalAlignment="Left" VerticalAlignment="Center" Text="Regolatori:"/>
+			<TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
+								 VerticalAlignment="Center" FontWeight="Black">
+				<Run Text="{Binding RegolatoriX, Mode=OneWay}"/>
+				<!--<Run Text="  (" Foreground="#F5A5"/>
+				<Run Text="{Binding Regolatori}" Foreground="#F5A5"/>
+				<Run Text=")" Foreground="#F5A5"/>-->
+			</TextBlock>
+			<TextBlock Grid.Row="0" Grid.Column="4" Style="{DynamicResource MaterialDesignSubtitle1TextBlock}"
+								 HorizontalAlignment="Left" VerticalAlignment="Center" Text="Squadrette:"/>
+			<TextBlock Grid.Row="0" Grid.Column="6" Style="{DynamicResource MaterialDesignSubtitle1TextBlock}"
+								 VerticalAlignment="Center" FontWeight="Black">
+				<Run Text="{Binding SquadretteX, Mode=OneWay}"/>
+				<!--<Run Text="  (" Foreground="#F5A5"/>
+				<Run Text="{Binding Squadrette}" Foreground="#F5A5"/>
+				<Run Text=")" Foreground="#F5A5"/>-->
+			</TextBlock>
+			<TextBlock Grid.Row="2" Grid.Column="4" Style="{DynamicResource MaterialDesignSubtitle1TextBlock}"
+								 HorizontalAlignment="Left" VerticalAlignment="Center" Text="Cerniere:"/>
+			<TextBlock Grid.Row="2" Grid.Column="6" Style="{DynamicResource MaterialDesignSubtitle1TextBlock}"
+								 VerticalAlignment="Center" FontWeight="Black">
+				<Run Text="{Binding CerniereX, Mode=OneWay}"/>
+				<!--<Run Text="  (" Foreground="#F5A5"/>
+				<Run Text="{Binding Cerniere}" Foreground="#F5A5"/>
+				<Run Text=")" Foreground="#F5A5"/>-->
+			</TextBlock>
+			<TextBlock Grid.Row="4" Grid.Column="4" Style="{DynamicResource MaterialDesignSubtitle1TextBlock}"
+								 HorizontalAlignment="Left" VerticalAlignment="Center" Text="Coppia tappi T:"/>
+			<TextBlock Grid.Row="4" Grid.Column="6" Style="{DynamicResource MaterialDesignSubtitle1TextBlock}"
+								 VerticalAlignment="Center" FontWeight="Black">
+				<Run Text="{Binding CoppiaTappiTX, Mode=OneWay}"/>
+				<!--<Run Text="  (" Foreground="#F5A5"/>
+				<Run Text="{Binding CoppiaTappiT}" Foreground="#F5A5"/>
+				<Run Text=")" Foreground="#F5A5"/>-->
+			</TextBlock>
+			<TextBlock Grid.Row="6" Grid.Column="4" Style="{DynamicResource MaterialDesignSubtitle1TextBlock}"
+								 HorizontalAlignment="Left" VerticalAlignment="Center" Text="Asta:"/>
+			<TextBlock Grid.Row="6" Grid.Column="6" Style="{DynamicResource MaterialDesignSubtitle1TextBlock}"
+								 VerticalAlignment="Center" FontWeight="Black">
+				<Run Text="{Binding AstaX, Mode=OneWay}"/>
+				<!--<Run Text="  (" Foreground="#F5A5"/>
+				<Run Text="{Binding Asta}" Foreground="#F5A5"/>
+				<Run Text=")" Foreground="#F5A5"/>-->
+			</TextBlock>
+			<TextBlock Grid.Row="8" Grid.Column="4" Style="{DynamicResource MaterialDesignSubtitle1TextBlock}"
+								 HorizontalAlignment="Left" VerticalAlignment="Center" Text="Incontro asta:"/>
+			<TextBlock Grid.Row="8" Grid.Column="6" Style="{DynamicResource MaterialDesignSubtitle1TextBlock}"
+								 VerticalAlignment="Center" FontWeight="Black">
+				<Run Text="{Binding IncontroAstaX, Mode=OneWay}"/>
+				<!--<Run Text="  (" Foreground="#F5A5"/>
+				<Run Text="{Binding IncontroAsta}" Foreground="#F5A5"/>
+				<Run Text=")" Foreground="#F5A5"/>-->
+			</TextBlock>
+			<TextBlock Grid.Row="0" Grid.Column="8" Style="{DynamicResource MaterialDesignSubtitle1TextBlock}"
+								 HorizontalAlignment="Left" VerticalAlignment="Center" Text="Guarnizione:"/>
+			<TextBlock Grid.Row="0" Grid.Column="10" Style="{DynamicResource MaterialDesignSubtitle1TextBlock}"
+								 VerticalAlignment="Center" FontWeight="Black">
+				<Run Text="{Binding GuarnizioneX, Mode=OneWay}"/>
+				<!--<Run Text="  (" Foreground="#F5A5"/>
+				<Run Text="{Binding Guarnizione}" Foreground="#F5A5"/>
+				<Run Text=")" Foreground="#F5A5"/>-->
+			</TextBlock>
+			<TextBlock Grid.Row="2" Grid.Column="8" Style="{DynamicResource MaterialDesignSubtitle1TextBlock}"
+								 HorizontalAlignment="Left" VerticalAlignment="Center" Text="Cremonese finestra:"/>
+			<TextBlock Grid.Row="2" Grid.Column="10" Style="{DynamicResource MaterialDesignSubtitle1TextBlock}"
+								 VerticalAlignment="Center" FontWeight="Black">
+				<Run Text="{Binding CremoneseFinestraX, Mode=OneWay}"/>
+				<!--<Run Text="  (" Foreground="#F5A5"/>
+				<Run Text="{Binding CremoneseFinestra}" Foreground="#F5A5"/>
+				<Run Text=")" Foreground="#F5A5"/>-->
+			</TextBlock>
+			<TextBlock Grid.Row="4" Grid.Column="8" Style="{DynamicResource MaterialDesignSubtitle1TextBlock}"
+								 HorizontalAlignment="Left" VerticalAlignment="Center" Text="Puntali:"/>
+			<TextBlock Grid.Row="4" Grid.Column="10" Style="{DynamicResource MaterialDesignSubtitle1TextBlock}"
+								 VerticalAlignment="Center" FontWeight="Black">
+				<Run Text="{Binding PuntaliX, Mode=OneWay}"/>
+				<!--<Run Text="  (" Foreground="#F5A5"/>
+				<Run Text="{Binding Puntali}" Foreground="#F5A5"/>
+				<Run Text=")" Foreground="#F5A5"/>-->
+			</TextBlock>
+			<TextBlock Grid.Row="6" Grid.Column="8" Style="{DynamicResource MaterialDesignSubtitle1TextBlock}"
+								 HorizontalAlignment="Left" VerticalAlignment="Center" Text="Catenacci:"/>
+			<TextBlock Grid.Row="6" Grid.Column="10" Style="{DynamicResource MaterialDesignSubtitle1TextBlock}"
+								 VerticalAlignment="Center" FontWeight="Black">
+				<Run Text="{Binding CatenacciX, Mode=OneWay}"/>
+				<!--<Run Text="  (" Foreground="#F5A5"/>
+				<Run Text="{Binding Catenacci}" Foreground="#F5A5"/>
+				<Run Text=")" Foreground="#F5A5"/>-->
+			</TextBlock>
+			<TextBlock Grid.Row="8" Grid.Column="8" Style="{DynamicResource MaterialDesignSubtitle1TextBlock}"
+								 HorizontalAlignment="Left" VerticalAlignment="Center" Text="Coppia cursori maniglia:"/>
+			<TextBlock Grid.Row="8" Grid.Column="10" Style="{DynamicResource MaterialDesignSubtitle1TextBlock}"
+								 VerticalAlignment="Center" FontWeight="Black">
+				<Run Text="{Binding CoppiaCursoriManigliaX, Mode=OneWay}"/>
+				<!--<Run Text="  (" Foreground="#F5A5"/>
+				<Run Text="{Binding CoppiaCursoriManiglia}" Foreground="#F5A5"/>
+				<Run Text=")" Foreground="#F5A5"/>-->
+			</TextBlock>
+		</Grid>
+	</design:Card>
+</UserControl>
