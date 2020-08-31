@@ -53,6 +53,9 @@ namespace ArnaldoDiBianco
 				case (int)Enums.ListItemTypes.FinestraPersiana2ante:
 					item = new ListItemContainer(Enums.ListItemTypes.FinestraPersiana2ante);
 					break;
+				case (int)Enums.ListItemTypes.Finestra1anta:
+					item = new ListItemContainer(Enums.ListItemTypes.Finestra1anta);
+					break;
 			}
 			item.RemoveClicked = btnRemove_Click;
 			itemsList.Items.Add(item);
@@ -67,17 +70,17 @@ namespace ArnaldoDiBianco
 				item.Calculate();
 				//var type = item.ItemType;
 				var model = item.Model;
-				_vm.TelaioBombato += model.TelaioX;
-				_vm.TelaioDritto += 0 /*finestre*/;
-				_vm.Sottotelaio += 0 /*finestre*/;
-				_vm.Anta += model.Anta + 0 /*finestre*/;
-				_vm.TdiRiporto += model.TdiRiportoX + 0 /*finestre*/;
-				_vm._40X20 += model._40X20X;
+				_vm.TelaioBombato += model.PersianeSheet ? model.TelaioX : 0;
+				_vm.TelaioDritto += model.PersianeSheet ? 0 : model.TelaioX;
+				_vm.Sottotelaio += model.PersianeSheet ? 0 : model.SottotelaioX;
+				_vm.Anta += model.Anta;
+				_vm.TdiRiporto += model.TdiRiportoX + 0 /*finestre - Porta balcone 2 ante*/;
+				_vm._40X20 += model.PersianeSheet ? model._40X20X : 0;
 				_vm.Fascione += 0 /*Porta balcone persiana*/ + 0 /*finestre*/;
-				_vm.Zoccolo += 0 /*finestre*/;
-				_vm.Compensatore += model.CompensatoreX;
-				_vm.MezzaLamella += model.MezzaLamellaX;
-				_vm.Lamella += model.LamellaX;
+				_vm.Zoccolo += model.PersianeSheet ? 0 : 0 /*finestre*/;
+				_vm.Compensatore += model.PersianeSheet ? model.CompensatoreX : 0;
+				_vm.MezzaLamella += model.PersianeSheet ? model.MezzaLamellaX : 0;
+				_vm.Lamella += model.PersianeSheet ? model.LamellaX : 0;
 			}
 			#region / 650
 			_vm.TelaioBombato /= 650;

@@ -27,6 +27,7 @@ namespace ArnaldoDiBianco.UserControls
 		{
 			InitializeComponent();
 			_vm = (FinestraPersiana2anteViewModel)DataContext;
+			_vm.PersianeSheet = true;
 			_vm.NumeroLamelle = -3;
 		}
 
@@ -51,11 +52,11 @@ namespace ArnaldoDiBianco.UserControls
 						, 0),
 					_40X20 = Math.Max(0, larghezza - 11),
 					TdiRiporto = Math.Max(0, altezza - 12),
-					Squadrette = 12,
-					Cerniere = 4,
-					Rolli = 4,
-					Catenacci = 1,
-					CoppiaTappiTdiR = 1,
+					Squadrette = larghezza <= 0 ? 0 : 12,
+					Cerniere = larghezza <= 0 ? 0 : 4,
+					Rolli = larghezza <= 0 ? 0 : 4,
+					Catenacci = larghezza <= 0 ? 0 : 1,
+					CoppiaTappiTdiR = larghezza <= 0 ? 0 : 1,
 					Guarnizione = telaio + anta,
 					Asta = larghezza <= 0 ? 0 : altezza - 28,
 					IncontroAsta = larghezza <= 0 ? 0 : 2,

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows;
 
 namespace ArnaldoDiBianco.ViewModels
 {
@@ -6,10 +7,12 @@ namespace ArnaldoDiBianco.ViewModels
 	{
 		private int _quantita = 1;
 		private decimal _telaio;
+		private decimal _sottotelaio;
 		private decimal _anta;
 		private decimal _compensatore;
 		private decimal _portalamelle1coppia;
 		private decimal _portalamelle2coppie;
+		private decimal _coppiaCursoriManiglia;
 		private decimal _mezzaLamella;
 		private decimal _lamella;
 		private decimal _40x20;
@@ -23,6 +26,7 @@ namespace ArnaldoDiBianco.ViewModels
 		private decimal _guarnizione;
 		private decimal _asta;
 		private int _incontroAsta;
+		private int _cremoneseFinestra;
 		private int _cremonesePersiana;
 		private int _puntali;
 		private int _regolatori = 0;
@@ -61,6 +65,20 @@ namespace ArnaldoDiBianco.ViewModels
 			}
 		}
 		public decimal TelaioX => Telaio * Quantita;
+
+		public decimal Sottotelaio
+		{
+			get => _sottotelaio;
+			set
+			{
+				if (value != _sottotelaio)
+				{
+					_sottotelaio = value;
+					RaisePropertyChanged();
+				}
+			}
+		}
+		public decimal SottotelaioX => Sottotelaio * Quantita;
 
 		public decimal Anta
 		{
@@ -122,6 +140,20 @@ namespace ArnaldoDiBianco.ViewModels
 		public decimal Portalamelle2coppie6 => Math.Round(Portalamelle2coppie / 6, 0);
 		public decimal Portalamelle2coppieX6 => Math.Round(Portalamelle2coppieX / 6, 0);
 
+		public decimal CoppiaCursoriManiglia
+		{
+			get => _coppiaCursoriManiglia;
+			set
+			{
+				if (value != _coppiaCursoriManiglia)
+				{
+					_coppiaCursoriManiglia = value;
+					RaisePropertyChanged();
+				}
+			}
+		}
+		public decimal CoppiaCursoriManigliaX => CoppiaCursoriManiglia * Quantita;
+
 		public decimal MezzaLamella
 		{
 			get => _mezzaLamella;
@@ -164,6 +196,19 @@ namespace ArnaldoDiBianco.ViewModels
 		}
 		public decimal _40X20X => _40X20 * Quantita;
 
+		public int NumeroLamelle
+		{
+			get => _numeroLamelle;
+			set
+			{
+				if (value != _numeroLamelle)
+				{
+					_numeroLamelle = value;
+					RaisePropertyChanged();
+				}
+			}
+		}
+
 		public decimal TdiRiporto
 		{
 			get => _tDiRiporto;
@@ -177,19 +222,6 @@ namespace ArnaldoDiBianco.ViewModels
 			}
 		}
 		public decimal TdiRiportoX => TdiRiporto * Quantita;
-
-		public int NumeroLamelle
-		{
-			get => _numeroLamelle;
-			set
-			{
-				if (value != _numeroLamelle)
-				{
-					_numeroLamelle = value;
-					RaisePropertyChanged();
-				}
-			}
-		}
 
 		public decimal Squadrette
 		{
@@ -302,6 +334,20 @@ namespace ArnaldoDiBianco.ViewModels
 			}
 		}
 		public decimal IncontroAstaX => IncontroAsta * Quantita;
+
+		public int CremoneseFinestra
+		{
+			get => _cremoneseFinestra;
+			set
+			{
+				if (value != _cremoneseFinestra)
+				{
+					_cremoneseFinestra = value;
+					RaisePropertyChanged();
+				}
+			}
+		}
+		public decimal CremoneseFinestraX => CremoneseFinestra * Quantita;
 
 		public int CremonesePersiana
 		{
@@ -439,6 +485,7 @@ namespace ArnaldoDiBianco.ViewModels
 		public void UpdateQuantity()
 		{
 			RaisePropertyChanged("TelaioX");
+			RaisePropertyChanged("SottotelaioX");
 			RaisePropertyChanged("AntaX");
 			RaisePropertyChanged("CompensatoreX");
 			RaisePropertyChanged("Portalamelle1coppiaX");
@@ -447,22 +494,26 @@ namespace ArnaldoDiBianco.ViewModels
 			RaisePropertyChanged("Portalamelle2coppieX");
 			RaisePropertyChanged("Portalamelle2coppie6");
 			RaisePropertyChanged("Portalamelle2coppieX6");
+			RaisePropertyChanged("CoppiaCursoriManigliaX");
 			RaisePropertyChanged("MezzaLamellaX");
 			RaisePropertyChanged("LamellaX");
 			RaisePropertyChanged("_40X20X");
+			RaisePropertyChanged("TdiRiportoX");
 			RaisePropertyChanged("SquadretteX");
 			RaisePropertyChanged("CerniereX");
 			RaisePropertyChanged("RolliX");
+			RaisePropertyChanged("CatenacciX");
+			RaisePropertyChanged("CoppiaTappiTdiRX");
 			RaisePropertyChanged("GuarnizioneX");
 			RaisePropertyChanged("AstaX");
 			RaisePropertyChanged("IncontroAstaX");
+			RaisePropertyChanged("CremoneseFinestraX");
 			RaisePropertyChanged("CremonesePersianaX");
 			RaisePropertyChanged("PuntaliX");
-			RaisePropertyChanged("TdiRiportoX");
-			RaisePropertyChanged("CatenacciX");
-			RaisePropertyChanged("CoppiaTappiTdiRX");
 			RaisePropertyChanged("RegolatoriX");
 			RaisePropertyChanged("Quantita2");
 		}
+
+		public bool PersianeSheet { get; set; }
 	}
 }

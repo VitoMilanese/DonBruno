@@ -28,6 +28,7 @@ namespace ArnaldoDiBianco.UserControls
 			InitializeComponent();
 			_vm = (FinestraPersiana1antaViewModel)DataContext;
 			_vm.NumeroLamelle = -3;
+			_vm.PersianeSheet = true;
 		}
 
 		public bool Calculate(decimal larghezza, decimal altezza)
@@ -47,9 +48,9 @@ namespace ArnaldoDiBianco.UserControls
 					MezzaLamella = Math.Max(0, (larghezza - 26) * 2),
 					Lamella = Math.Round(larghezza <= 0 ? 0 : (larghezza - 25) * Math.Floor(portalamelle1coppia / 6), 0),
 					_40X20 = Math.Max(0, larghezza - 11),
-					Squadrette = 8,
-					Cerniere = 2,
-					Rolli = 2,
+					Squadrette = larghezza <= 0 ? 0 : 8,
+					Cerniere = larghezza <= 0 ? 0 : 2,
+					Rolli = larghezza <= 0 ? 0 : 2,
 					Guarnizione = telaio + anta,
 					Asta = larghezza <= 0 ? 0 : altezza - 28,
 					IncontroAsta = larghezza <= 0 ? 0 : 2,
