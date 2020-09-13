@@ -53,9 +53,7 @@ namespace ArnaldoDiBianco.UserControls
 					break;
 				case Enums.ListItemTypes.PortaBalcone2ante:
 					break;
-				case Enums.ListItemTypes.PortaFinestra1anta:
-					break;
-				case Enums.ListItemTypes.PortaFinestra2ante:
+				case Enums.ListItemTypes.FinestraScorrevole:
 					break;
 				default:
 					throw new Exception("Unknown item type");

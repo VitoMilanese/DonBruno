@@ -30,31 +30,30 @@ namespace ArnaldoDiBianco.UserControls
 			_vm.PersianeSheet = false;
 		}
 
-		//public bool Calculate(decimal larghezza, decimal altezza)
-		public bool Calculate(decimal B2, decimal B3)
+		public bool Calculate(decimal larghezza, decimal altezza)
 		{
 			try
 			{
-				var telaio = B2 + B3 * 2;
-				var anta = Math.Max(0, (B2 - 9) * 2 + (B3 - 6) * 4);
-				var portalamelle2coppie = Math.Max(0, B3 - 20);
+				var telaio = larghezza + altezza * 2;
+				var anta = Math.Max(0, (larghezza - 9) * 2 + (altezza - 6) * 4);
+				var portalamelle2coppie = Math.Max(0, altezza - 20);
 				var model = new FinestraPersiana2anteViewModel
 				{
 					Telaio = telaio,
 					Anta = anta,
-					Sottotelaio = Math.Max(0, B2 - 4),
-					TdiRiporto = Math.Max(0, B3 - 12), // TODO: check with Arnaldo
-					Regolatori = B2 <= 0 ? 0 : 4,
-					Squadrette = B2 <= 0 ? 0 : 12,
-					Cerniere = B2 <= 0 ? 0 : 4,
-					CoppiaTappiT = B2 <= 0 ? 0 : 1,
+					Sottotelaio = Math.Max(0, larghezza - 4),
+					TdiRiporto = Math.Max(0, altezza - 12),
+					Regolatori = larghezza <= 0 ? 0 : 4,
+					Squadrette = larghezza <= 0 ? 0 : 12,
+					Cerniere = larghezza <= 0 ? 0 : 4,
+					CoppiaTappiT = larghezza <= 0 ? 0 : 1,
 					Guarnizione = telaio + anta,
-					Asta = B2 <= 0 ? 0 : B3 - 40,
-					IncontroAsta = B2 <= 0 ? 0 : 2,
-					CremoneseFinestra = B2 <= 0 ? 0 : 1,
-					Puntali = B2 <= 0 ? 0 : 2,
-					Catenacci = B2 <= 0 ? 0 : 1,
-					CoppiaCursoriManiglia = B2 <= 0 ? 0 : 1
+					Asta = larghezza <= 0 ? 0 : altezza - 40,
+					IncontroAsta = larghezza <= 0 ? 0 : 2,
+					CremoneseFinestra = larghezza <= 0 ? 0 : 1,
+					Puntali = larghezza <= 0 ? 0 : 2,
+					Catenacci = larghezza <= 0 ? 0 : 1,
+					CoppiaCursoriManiglia = larghezza <= 0 ? 0 : 1
 				};
 				_vm.Telaio = model.Telaio;
 				_vm.Anta = model.Anta;

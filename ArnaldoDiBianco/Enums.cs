@@ -4,16 +4,15 @@ namespace ArnaldoDiBianco.Enums
 {
 	public enum ListItemTypes
 	{
-		FinestraPersiana1anta = 0,
-		FinestraPersiana2ante = 1,
-		Finestra1anta = 2,
-		Finestra2ante = 3,
-		PortaBalconePersiana1anta = 4,
-		PortaBalconePersiana2ante = 5,
-		PortaBalcone1anta = 6,
-		PortaBalcone2ante = 7,
-		PortaFinestra1anta = 8,
-		PortaFinestra2ante = 9
+		Finestra1anta = 0,
+		Finestra2ante = 1,
+		PortaBalcone1anta = 2,
+		PortaBalcone2ante = 3,
+		FinestraPersiana1anta = 4,
+		FinestraPersiana2ante = 5,
+		PortaBalconePersiana1anta = 6,
+		PortaBalconePersiana2ante = 7,
+		FinestraScorrevole = 8
 	}
 
 	public static class Names
@@ -28,8 +27,7 @@ namespace ArnaldoDiBianco.Enums
 			{ ListItemTypes.PortaBalconePersiana2ante, "Porta Balcone Persiana 2 ante" },
 			{ ListItemTypes.PortaBalcone1anta, "Porta Balcone 1 anta" },
 			{ ListItemTypes.PortaBalcone2ante, "Porta Balcone 2 ante" },
-			{ ListItemTypes.PortaFinestra1anta, "Porta Finestra 1 anta" },
-			{ ListItemTypes.PortaFinestra2ante, "Porta Finestra 2 ante" }
+			{ ListItemTypes.FinestraScorrevole, "Finestra scorrevole" },
 		};
 	}
 }
