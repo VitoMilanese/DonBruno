@@ -6,11 +6,13 @@ namespace ArnaldoDiBianco.ViewModels
 {
 	public class ListItemContainerViewModel : BaseViewModel
 	{
+		private int _quantity = 1;
 		private string _title;
 		private decimal _larghezza;
 		private decimal _altezza;
 		private bool _calculated = false;
-		private int _quantity = 1;
+		private bool _withSerratura;
+		private Visibility _serraturaOption { get; set; } = Visibility.Collapsed;
 
 		public ListItemContainerViewModel()
 		{
@@ -132,6 +134,33 @@ namespace ArnaldoDiBianco.ViewModels
 				if (value != _imageSource)
 				{
 					_imageSource = value;
+					RaisePropertyChanged();
+				}
+			}
+		}
+
+
+		public Visibility SerraturaOption
+		{
+			get => _serraturaOption;
+			set
+			{
+				if (value != _serraturaOption)
+				{
+					_serraturaOption = value;
+					RaisePropertyChanged();
+				}
+			}
+		}
+
+		public bool WithSerratura
+		{
+			get => _withSerratura;
+			set
+			{
+				if (value != _withSerratura)
+				{
+					_withSerratura = value;
 					RaisePropertyChanged();
 				}
 			}

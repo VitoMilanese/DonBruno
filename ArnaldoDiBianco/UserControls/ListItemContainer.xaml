@@ -31,6 +31,7 @@
 							<ColumnDefinition Width="Auto"/>
 							<ColumnDefinition Width="10"/>
 							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition Width="Auto"/>
 							<ColumnDefinition Width="10"/>
 							<ColumnDefinition Width="*"/>
 							<ColumnDefinition Width="10"/>
@@ -66,7 +67,14 @@
 								<ScaleTransform ScaleX="1" ScaleY="1"/>
 							</ComboBox.LayoutTransform>
 						</ComboBox>
-						<Button Grid.Column="6" Style="{DynamicResource MaterialDesignRaisedAccentButton}" design:ButtonAssist.CornerRadius="50" Width="25" Height="25" Padding="0"
+						<StackPanel Grid.Column="6" Visibility="{Binding SerraturaOption}" d:Visibility="Visible" VerticalAlignment="Center">
+							<CheckBox IsChecked="{Binding WithSerratura}" VerticalContentAlignment="Center" VerticalAlignment="Center">
+								<TextBlock Style="{DynamicResource MaterialDesignSubtitle1TextBlock}"
+										 HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,10,0"
+										 Foreground="CadetBlue" FontWeight="Bold" FontSize="14" Text="Serratura"/>
+							</CheckBox>
+						</StackPanel>
+						<Button Grid.Column="7" Style="{DynamicResource MaterialDesignRaisedAccentButton}" design:ButtonAssist.CornerRadius="50" Width="25" Height="25" Padding="0"
 							HorizontalAlignment="Left" VerticalAlignment="Center"	x:Name="btnCalc" Click="btnCalc_Click">
 							<design:PackIcon Kind="Play">
 								<!--<design:PackIcon.LayoutTransform>
@@ -74,10 +82,10 @@
 							</design:PackIcon.LayoutTransform>-->
 							</design:PackIcon>
 						</Button>
-						<TextBlock Grid.Column="8" Style="{DynamicResource MaterialDesignSubtitle1TextBlock}"
+						<TextBlock Grid.Column="9" Style="{DynamicResource MaterialDesignSubtitle1TextBlock}"
 										 HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,5,0,0"
 										 Foreground="CadetBlue" FontWeight="Bold" FontSize="18" Text="{Binding Title}" d:Text="Title"/>
-						<Button Grid.Column="10" Style="{DynamicResource MaterialDesignRaisedAccentButton}" design:ButtonAssist.CornerRadius="50" Width="25" Height="25" Padding="0"
+						<Button Grid.Column="11" Style="{DynamicResource MaterialDesignRaisedAccentButton}" design:ButtonAssist.CornerRadius="50" Width="25" Height="25" Padding="0"
 							HorizontalAlignment="Right" VerticalAlignment="Center"	x:Name="btnRemove" Click="btnRemove_Click" Background="Red" Foreground="White">
 							<design:PackIcon Kind="Close" Margin="-1,-1,0,0">
 								<design:PackIcon.LayoutTransform>
