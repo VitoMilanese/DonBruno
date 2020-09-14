@@ -59,6 +59,9 @@ namespace ArnaldoDiBianco
 				case (int)Enums.ListItemTypes.Finestra2ante:
 					item = new ListItemContainer(Enums.ListItemTypes.Finestra2ante);
 					break;
+				case (int)Enums.ListItemTypes.PortaBalcone1anta:
+					item = new ListItemContainer(Enums.ListItemTypes.PortaBalcone1anta);
+					break;
 			}
 			item.RemoveClicked = btnRemove_Click;
 			itemsList.Items.Add(item);
@@ -79,8 +82,8 @@ namespace ArnaldoDiBianco
 				_vm.Anta += model.Anta;
 				_vm.TdiRiporto += model.TdiRiportoX + 0 /*finestre - Porta balcone 2 ante*/;
 				_vm._40X20 += model.PersianeSheet ? model._40X20X : 0;
-				_vm.Fascione += 0 /*Porta balcone persiana*/ + 0 /*finestre*/;
-				_vm.Zoccolo += model.PersianeSheet ? 0 : 0 /*finestre*/;
+				_vm.Fascione += model.FascioneX;
+				_vm.Zoccolo += model.ZoccoloX;
 				_vm.Compensatore += model.PersianeSheet ? model.CompensatoreX : 0;
 				_vm.MezzaLamella += model.PersianeSheet ? model.MezzaLamellaX : 0;
 				_vm.Lamella += model.PersianeSheet ? model.LamellaX : 0;

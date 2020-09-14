@@ -30,6 +30,8 @@ namespace ArnaldoDiBianco.ViewModels
 		private int _cremoneseFinestra;
 		private int _cremonesePersiana;
 		private int _puntali;
+		private decimal _fascione;
+		private decimal _zoccolo;
 		private int _regolatori = 0;
 
 		private decimal _nBarreTelaio;
@@ -391,6 +393,36 @@ namespace ArnaldoDiBianco.ViewModels
 			}
 		}
 		public decimal PuntaliX => Puntali * Quantita;
+
+		public decimal Fascione
+		{
+			get => _fascione;
+			set
+			{
+				if (value != _fascione)
+				{
+					_fascione = value;
+					RaisePropertyChanged();
+					RaisePropertyChanged("FascioneX");
+				}
+			}
+		}
+		public decimal FascioneX => Fascione * Quantita;
+
+		public decimal Zoccolo
+		{
+			get => _zoccolo;
+			set
+			{
+				if (value != _zoccolo)
+				{
+					_zoccolo = value;
+					RaisePropertyChanged();
+					RaisePropertyChanged("ZoccoloX");
+				}
+			}
+		}
+		public decimal ZoccoloX => Zoccolo * Quantita;
 
 		public int Regolatori
 		{

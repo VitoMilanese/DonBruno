@@ -50,6 +50,8 @@ namespace ArnaldoDiBianco.UserControls
 				case Enums.ListItemTypes.PortaBalconePersiana2ante:
 					break;
 				case Enums.ListItemTypes.PortaBalcone1anta:
+					_content.Content = new PortaBalcone1anta();
+					_vm.SerraturaOption = Visibility.Visible;
 					break;
 				case Enums.ListItemTypes.PortaBalcone2ante:
 					break;
