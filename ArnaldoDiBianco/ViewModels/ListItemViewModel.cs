@@ -558,7 +558,8 @@ namespace ArnaldoDiBianco.ViewModels
 			RaisePropertyChanged("CremoneseFinestraX");
 			RaisePropertyChanged("CremonesePersianaX");
 			RaisePropertyChanged("PuntaliX");
-			RaisePropertyChanged("RegolatoriX");
+			RaisePropertyChanged("FascioneX");
+			RaisePropertyChanged("ZoccoloX");
 			RaisePropertyChanged("Quantita2");
 		}
 
