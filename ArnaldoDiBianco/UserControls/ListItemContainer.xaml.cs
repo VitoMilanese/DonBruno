@@ -54,6 +54,8 @@ namespace ArnaldoDiBianco.UserControls
 					_vm.SerraturaOption = Visibility.Visible;
 					break;
 				case Enums.ListItemTypes.PortaBalcone2ante:
+					_content.Content = new PortaBalcone2ante();
+					_vm.SerraturaOption = Visibility.Visible;
 					break;
 				case Enums.ListItemTypes.FinestraScorrevole:
 					break;

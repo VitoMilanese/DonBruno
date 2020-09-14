@@ -433,6 +433,7 @@ namespace ArnaldoDiBianco.ViewModels
 				{
 					_regolatori = value;
 					RaisePropertyChanged();
+					RaisePropertyChanged("RegolatoriX");
 				}
 			}
 		}
@@ -560,6 +561,7 @@ namespace ArnaldoDiBianco.ViewModels
 			RaisePropertyChanged("PuntaliX");
 			RaisePropertyChanged("FascioneX");
 			RaisePropertyChanged("ZoccoloX");
+			RaisePropertyChanged("RegolatoriX");
 			RaisePropertyChanged("Quantita2");
 		}
 

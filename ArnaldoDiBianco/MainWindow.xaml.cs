@@ -62,6 +62,9 @@ namespace ArnaldoDiBianco
 				case (int)Enums.ListItemTypes.PortaBalcone1anta:
 					item = new ListItemContainer(Enums.ListItemTypes.PortaBalcone1anta);
 					break;
+				case (int)Enums.ListItemTypes.PortaBalcone2ante:
+					item = new ListItemContainer(Enums.ListItemTypes.PortaBalcone2ante);
+					break;
 			}
 			item.RemoveClicked = btnRemove_Click;
 			itemsList.Items.Add(item);
